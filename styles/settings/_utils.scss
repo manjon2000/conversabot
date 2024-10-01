@@ -1,0 +1,57 @@
+/*
+Scroller
+====================================
+*/
+.scroller {
+  max-width: 100%;
+  padding: 1rem;
+  position: relative;
+  //   background-color: #FF9A8B;
+  //   background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+}
+
+.scroller__inner {
+  padding-block: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5em;
+  z-index: 3;
+  position: relative;
+
+  & img {
+    width: 50px;
+    transition: ease-in-out 0.25s;
+    &:hover {
+      transform: scale(1.5);
+      cursor: pointer;
+    }
+  }
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 10s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 60s;
+}
