@@ -24,10 +24,19 @@ document.addEventListener("DOMContentLoaded", (init) => {
             const increment = target / speed;
   
             if (current < target) {
-                counter.innerText = Math.ceil(current + increment);
+                if(target === 24) {
+                  counter.innerText = `${Math.ceil(current + increment)}`;
+                }else {
+                  counter.innerText = `+${Math.ceil(current + increment)}`;
+                }
                 setTimeout(updateCount, 50);
             } else {
-                counter.innerText = target;
+              if(target === 24) {
+                counter.innerText = `${target}`;
+              }else {
+                counter.innerText = `+${target}`;
+              }
+                
             }
         };
   

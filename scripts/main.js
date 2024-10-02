@@ -40,6 +40,16 @@ document.addEventListener("DOMContentLoaded", (init) => {
   
   });
 
+  const itemsMenuNav = document.querySelectorAll('.navbar-menu-item > a');
+
+  itemsMenuNav.forEach((eL) => {
+    eL.addEventListener('click', () => {
+     if(window.innerWidth < 768) {
+      containerMenu.classList.toggle("navbar-menu--actived");
+     }
+    });
+  })
+
   $(".testimonials-primary").owlCarousel(
     {
       loop: true,

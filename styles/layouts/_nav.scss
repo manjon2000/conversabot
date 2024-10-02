@@ -37,7 +37,7 @@
     display: flex;
     justify-content: space-between;
     margin: auto;
-    padding: 1.5rem 1rem;
+    padding: 0.25rem 1rem;;
   }
 
   &-menu {
@@ -70,6 +70,7 @@
     }
 
     &-item {
+      width: fit-content;
       font-size: 2em;
       font-weight: bold;
       position: relative;
@@ -146,12 +147,14 @@
 }
 
 .btn {
-  padding: 1rem 2rem;
+  display: inline-block;
+  padding: 1rem;
   border-radius: 999px;
   background: linear-gradient(155deg, #7c3aed 20%, #f80282 50%, #fd309b 80%, #7c3aed 100%);
   background-size: 500%;
   color: whitesmoke;
   font-weight: 600;
+  font-size: 1rem !important;
 
   transition: background ease-in-out 0.25s;
 
